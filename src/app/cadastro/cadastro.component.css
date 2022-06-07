@@ -1,19 +1,29 @@
-#img-logo{
-    background-image: url("https://imgur.com/skNXOzs");
-    min-height: 10vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+.bg-inverno{
+    background-color: #89b0bf;
 }
 
-#fonte-text{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-
+.bg-outono{
+    background-color: #40311e;
 }
 
-    :root {
-        --primavera-color: #E4BDA3; 
-        --verao-color:  #C77C00;
-        --outono-color: #40311E;
-        --inverno-color: #89B0BF;
-        }
+.bg-verao{
+    background-color: #c77c00;
+}
+
+.bg-primavera{
+    background-color: #e4bda3;
+}
+
+.bg-facebook{
+    background-color: #3b5998;
+}
+
+.bg-google{
+    background-color: #4285F4;
+}
+
+.btn-style{
+    outline: none;
+    border-radius: 100px;
+    transition: 500ms ease-in-out;
+}

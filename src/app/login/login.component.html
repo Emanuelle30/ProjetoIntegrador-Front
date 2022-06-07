@@ -1,6 +1,11 @@
-<div class="container-fluid d-flex justify-content-center pt-5">
+<div class="container-fluid d-flex justify-content-center pt-5 bg-inverno">
+    <div class="flex-direction-column">
+        <img src="../../assets/img/passaro-xilogravura.png" alt="imagem de cordel passaro">
+        <br>
+        <img src="../../assets/img/Garota-xilogravura.png" alt="imagem de cordl garota">
+            </div>
 <!-- card -->
-<div class="card" style="width: 25rem;">
+<div class="card" style="width: 32rem;">
     <div class="card-body">
         <ul class="navbar-nav ml-auto d-flex align-items-center">
             <li class="nav-item pb-2">
@@ -15,11 +20,15 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-10">
 
-                    <div class="text-center">
-                        <a href="">Entrar com o Facebook</a>
-                        <br>
-                        <a href="">Entrar com o Google</a>
+                    <!-- redes sociais -->
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn bg-facebook text-white w-100 mt-3 mb-2 btn-style"><i class="fa fa-facebook" aria-hidden="true"> Entrar com o Facebook</i></button>
                     </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn bg-google text-white w-100 mb-3 btn-style"><i class="fa fa-google" aria-hidden="true"> Entrar com o Google</i></button>
+                    </div>
+                <!-- /redes sociais -->
 
                     <div class="form-group">
                         <label for="usuario">E-mail</label>
@@ -37,7 +46,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-success" (click)="login()" >Entrar</button>
+                    <button type="submit" class="btn bg-verao text-white btn-style w-100" (click)="login()" >Entrar</button>
                     </div>
 
                     <hr class="mt-3 mb-3">
