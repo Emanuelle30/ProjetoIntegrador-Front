@@ -7,16 +7,15 @@ import { Usuario } from '../model/Usuario';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
+
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-postagem',
+  templateUrl: './postagem.component.html',
+  styleUrls: ['./postagem.component.css']
 })
-export class InicioComponent implements OnInit {
+export class PostagemComponent implements OnInit {
 
   produto: Produto = new Produto()
-  listaProduto: Produto[]
-
 
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
@@ -24,58 +23,51 @@ export class InicioComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
-
-
-
-
+  nomeUsuario = environment.nome
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService
-  ) {}
+  ){ }
 
-  ngOnInit() {
-    if (environment.token == '') {
+  ngOnInit(){
+
+    if(environment.token == ''){
+      alert('Sua seção expirou, faça login novamente.')
       this.router.navigate(['/entrar'])
     }
-
-  
-  this.getAllCategoria()
-  this.getAllProdutos()
-
+    
+    this.getAllCategoria()
   }
-
-  getAllCategoria(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
-    this.listaCategoria = resp
-    })
+  
+ 
+    getAllCategoria(){
+      this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+        this.listaCategoria = resp })
     }
 
-    findByIdCategoria() {
-      this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp : Categoria)=> {
-      this.categoria = resp
-    })
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
+      this.categoria = resp})
     }
+    
+  
 
-    getAllProdutos(){
-      this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
-      this.listaProduto = resp
-      })
-      }
-
-    publicar(){
+  cadastrar(){
     this.categoria.id = this.idCategoria
-    this.produto.categoria= this.categoria
+    this.produto.categoria = this.categoria
 
     this.usuario.id = this.idUsuario
     this.produto.usuario = this.usuario
+    this.produto.fornecedor = this.nomeUsuario
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
-    this.produto = resp
-    alert('Cadastro de produto realizado com sucesso!')
-    this.produto = new Produto()
-    this.getAllProdutos()
+      this.produto = resp
+      alert('Postagem realizada com sucesso!')
+      this.produto = new Produto()
     })
-    }
+   
+  }
+
 
 }
