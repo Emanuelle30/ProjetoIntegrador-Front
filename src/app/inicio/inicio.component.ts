@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../model/Categoria';
+import { Produto } from '../model/Produto';
+import { Usuario } from '../model/Usuario';
+import { CategoriaService } from '../service/categoria.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +14,68 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  produto: Produto = new Produto()
+  listaProduto: Produto[]
 
-  ngOnInit(): void {
+
+  categoria: Categoria = new Categoria()
+  listaCategoria: Categoria[]
+  idCategoria: number
+
+  usuario: Usuario = new Usuario()
+  idUsuario = environment.id
+
+
+
+
+  constructor(
+    private router: Router,
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService
+  ) {}
+
+  ngOnInit() {
+    if (environment.token == '') {
+      this.router.navigate(['/entrar'])
+    }
+
+  
+  this.getAllCategoria()
+  this.getAllProdutos()
+
   }
+
+  getAllCategoria(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+    this.listaCategoria = resp
+    })
+    }
+
+    findByIdCategoria() {
+      this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp : Categoria)=> {
+      this.categoria = resp
+    })
+    }
+
+    getAllProdutos(){
+      this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
+      this.listaProduto = resp
+      })
+      }
+
+    publicar(){
+    this.categoria.id = this.idCategoria
+    this.produto.categoria= this.categoria
+
+    this.usuario.id = this.idUsuario
+    this.produto.usuario = this.usuario
+
+    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
+    this.produto = resp
+    alert('Cadastro de produto realizado com sucesso!')
+    this.produto = new Produto()
+    this.getAllProdutos()
+    })
+    }
 
 }
