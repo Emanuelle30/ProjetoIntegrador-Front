@@ -13,3 +13,4 @@ export class ProdutoComponent implements OnInit {
   }
 
 }
+//página TS de descrição do produto
