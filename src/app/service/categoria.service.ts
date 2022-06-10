@@ -15,6 +15,15 @@ export class CategoriaService {
   token = {
     headers: new HttpHeaders().set('Authorization',environment.token)
   }
+
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    };
+  }
+
+  
+
 // *Métodos Http*
 
 //Método GET: Aqui busca todos os temas:
@@ -28,18 +37,18 @@ export class CategoriaService {
   }
 
 //Método POST: Aqui insere novos temas:
-postCategoria(tema: Categoria): Observable<Categoria>{
-  return this.http.post<Categoria>('https://compravisse.herokuapp.com/categorias', Categoria,this.token)
+postCategoria(categoria: Categoria): Observable<Categoria>{
+  return this.http.post<Categoria>('https://compravisse.herokuapp.com/categorias', categoria,this.token)
 }
 
 //Método PUT: Aqui atualiza por tema:
-putTema(tema: Categoria): Observable<Categoria>{
-  return this.http.put<Categoria>('https://compravisse.herokuapp.com/categorias', Categoria, this.token)
+putTema(categoria: Categoria): Observable<Categoria>{
+  return this.http.put<Categoria>('https://compravisse.herokuapp.com/categorias', categoria, this.token)
 }
 
 //Método DELETE: Aqui exclui:
-deleteCategoria(id: number): Observable<Object> {
-  return this.http.delete(`https://willihane.herokuapp.com/categorias/${id}`, this.token)
+deleteCategoria(id: number) {
+  return this.http.delete(`https://compravisse.herokuapp.com/categorias/${id}`, this.token)
 }
 
 }
