@@ -37,6 +37,7 @@ export class PostagemComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     
+    this.produtoService.refreshToken()
     this.getAllCategoria()
   }
   

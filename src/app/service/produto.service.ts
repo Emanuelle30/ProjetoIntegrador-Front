@@ -16,6 +16,12 @@ export class ProdutoService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token),
+    };
+  }
+
   getAllProduto(): Observable<Produto[]>{
     return this.http.get<Produto[]>('https://compravisse.herokuapp.com/produtos', this.token)
   }
