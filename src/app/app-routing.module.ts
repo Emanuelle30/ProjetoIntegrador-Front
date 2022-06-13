@@ -18,13 +18,13 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastro', component: CadastroComponent},
   {path: 'categoria', component: CategoriaComponent},
-  {path: 'produto', component: ProdutoComponent},
+  {path: 'produto/:id', component: ProdutoComponent},
   {path: 'postagem', component: PostagemComponent},
 
   {path: 'produto-edit/:id', component: ProdutoEditComponent},
   {path: 'produto-delete/:id', component: ProdutoDeleteComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
-  {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
+  {path: 'categoria-delete/:id', component: CategoriaDeleteComponent}
 
 ];
 
