@@ -10,11 +10,10 @@
               <label for="inputCEP">Calcular frete e prazo</label>
             </h4>
 
-    <!--  calcular frete e prazo -->
+            <!--  calcular frete e prazo -->
             <div class="d-flex align-items-center">
               <input
-              mask='AAAA-AAA'
-                
+                mask="AAAA-AAA"
                 type="text"
                 class="form-control mr-3"
                 id="inputCEP"
@@ -66,104 +65,167 @@
                 </div>
               </div>
             </div>
-  <!-- / calcular frete e prazo -->
-
+            <!-- / calcular frete e prazo -->
           </div>
         </div>
       </div>
     </form>
 
-  
+    <!-- fim forms -->
 
     <!-- card miniatura do produto -->
 
-    <div class="card mb-5  mt-5" style="width: 35rem">
+    <div class="card mb-5 mt-5" style="width: 35rem">
       <div class="card-body ml-3">
         <p class="card-subtitle mb-4 mt-2 ml-1">
           Vendido e entregue por <a href="">Compra, visse?!</a>
         </p>
         <div class="d-flex align-items-center">
-          <img class="w-50" src="../../assets/img/3.jpg" alt="foto do produto aqui" />
-        <p class="ml-4 mt-3">Quantidade:</p>
-        <button class="ml-3 borda bg-verao" (click)="offClick()"> <i class="fa fa-minus text-white" aria-hidden="true"></i> </button>
-        <option  class="ml-2"value="">{{ sumValue }}</option>
-        <button  class="ml-2 borda bg-verao" (click)="onClick()"> <i class="fa fa-plus text-white" aria-hidden="true"></i> </button>
-      </div>
+          <img
+            class="w-50"
+            src="../../assets/img/3.jpg"
+            alt="foto do produto aqui"
+          />
+          <p class="ml-4 mt-3">Quantidade:</p>
+          <button class="ml-3 borda bg-verao" (click)="offClick()">
+            <i class="fa fa-minus text-white" aria-hidden="true"></i>
+          </button>
+          <option class="ml-2" value="">{{ sumValue }}</option>
+          <button class="ml-2 borda bg-verao" (click)="onClick()">
+            <i class="fa fa-plus text-white" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- / card miniatura do produto -->
 
-    <!-- ! modal de finalizar compra -->
-
-    <!-- Button trigger modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target="#exampleModalCenter"
-    >
-      Finalizar compra
-    </button>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLongTitle">
-              Compra realizada com sucesso!
-            </h3>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
+    <!-- CARD COMPRAS FAKE -->
+    <div class="container-fluid my-4">
+      <div class="container">
+        <div class="row">
+          <h3 class="text-info">Minhas compras</h3>
+        </div>
+        <div class="row d-flex align-items-center justify-content-between">
+          <div class="col-7">
+            <div
+              class="row border rounded border-dark p-0 mb-3"
+              *ngFor="let item of listaCompras"
             >
-              <span aria-hidden="true">&times;</span>
-            </button>
+              <div class="col-3 p-0 m-0">
+                <img [src]="item.foto" alt="" class="produtoFoto rounded" />
+              </div>
+              <div class="col-6 d-flex flex-column justify-content-center">
+                <div class="row">
+                  <h5 class="">{{ item.nome }}</h5>
+                  <p>Plataforma: {{ item.categoria.descricao }}</p>
+                </div>
+              </div>
+              <div class="col-3">
+                <div
+                  class="row d-flex justify-content-center align-items-center h-100"
+                >
+                  <h5 class="text-center">
+                    {{ item.preco | currency: "BRL" }}
+                  </h5>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <h5 class="text-muted">
-              Aguarde... Em instantes você recebera todas as informações da
-              compra através do e-mail cadastrado!
-            </h5>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-success"
-              data-dismiss="modal"
-              routerLink="/inicio"
-            >
-              Ok
-            </button>
+
+          <!-- /CARD COMPRAS FAKE -->
+
+          <!-- ? CALC PRECO DOS PRODUTOS -->
+
+          <div class="col-3">
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="row d-flex justify-content-center align-items-center"
+                >
+                  <h5 class="text-center">
+                    Total: {{ total() | currency: "BRL" }}
+                  </h5>
+                  <p class="text-center">
+                    em até 12 parcelas de: {{ parcela() | currency: "BRL" }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ? / CALC PRECO DOS PRODUTOS -->
+
+            <!-- ! Botão e modal de finalizar compra -->
+
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="row row d-flex justify-content-center align-items-center"
+                >
+                  <!-- botão -->
+                  <button
+                    type="button"
+                    class="btn bg-inverno fw text-white"
+                    data-toggle="modal"
+                    data-target="#exampleModalCenter"
+                  >
+                    Finalizar compra
+                  </button>
+
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="exampleModalCenter"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class="modal-dialog modal-dialog-centered"
+                      role="document"
+                    >
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title" id="exampleModalLongTitle">
+                            Compra realizada com sucesso!
+                          </h3>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <h5 class="text-muted">
+                            Aguarde... Em instantes você recebera todas as
+                            informações da compra através do e-mail cadastrado!
+                          </h5>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-success"
+                            data-dismiss="modal"
+                            routerLink="/inicio"
+                          >
+                            Ok
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ! / modal de finalizar compra -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- ! / modal de finalizar compra -->
-
- <!-- ! card valor total-->
-  <div class="container d-flex justify-content-center">
-  <div class="col-md-3">
-
-    <div class="card text-center" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Título especial</h5>
-        <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-        <a href="#" class="btn btn-primary">Visitar</a>
-      </div>
-    </div>
   </div>
-<!-- ! /card valor total-->
-</div>
 </div>
