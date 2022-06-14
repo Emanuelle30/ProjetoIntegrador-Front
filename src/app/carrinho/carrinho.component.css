@@ -24,3 +24,9 @@
     width: 100%;
     object-fit: cover;
 }
+
+.borda {
+    border-radius: 1rem;
+    border:#c77c00;
+
+}
