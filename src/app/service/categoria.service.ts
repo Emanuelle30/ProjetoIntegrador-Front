@@ -28,13 +28,19 @@ export class CategoriaService {
 
 //Método GET: Aqui busca todos os temas:
   getAllCategoria(): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('https://compravisse.herokuapp.com/categorias', this.token)
+    return this.http.get<Categoria[]>('https://compravisse.herokuapp.com/categorias')
   }
 
               //Aqui busca por id do tema:
   getByIdCategoria(id: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`https://compravisse.herokuapp.com/categorias/${id}`, this.token)
+    return this.http.get<Categoria>(`https://compravisse.herokuapp.com/categorias/${id}`)
   }
+
+  //Método GET: busca categoria pela sua descricao, será usado para buscar produtos dentro dessa categoria
+  getByDescricaoCategoria(descricao: string): Observable<Categoria>{
+    return this.http.get<Categoria>(`https://compravisse.herokuapp.com/categorias/categoria/${descricao}`)
+  }
+
 
 //Método POST: Aqui insere novos temas:
 postCategoria(categoria: Categoria): Observable<Categoria>{

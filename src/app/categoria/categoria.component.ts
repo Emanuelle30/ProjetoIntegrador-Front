@@ -1,9 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
-import { Categoria } from '../model/Categoria';
+import { ActivatedRoute } from '@angular/router';
+import { Categoria } from 'src/app/model/Categoria';
+import { Produto } from '../model/Produto';
 import { CategoriaService } from '../service/categoria.service';
+
 
 @Component({
   selector: 'app-categoria',
@@ -13,34 +13,27 @@ import { CategoriaService } from '../service/categoria.service';
 export class CategoriaComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
-  listaCategorias: Categoria[]
-
+  idCategoria: number
+  listaProduto: Produto []
+  
   constructor(
-    private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,    
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    if(environment.token == ''){
-      this.router.navigate(['/inicio'])
-    }
-    this.findAllCategorias()
-    this.categoriaService.refreshToken()
+    this.route.params.subscribe(({id}) => this.findByIdTema(id))
+    this.idCategoria = this.route.snapshot.params['id']
+    this.findByIdTema(this.idCategoria)
+    this.categoria.produto = this.listaProduto    
   }
 
-  cadastrar(){
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
+  findByIdTema(id: number){
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
       this.categoria = resp
-      alert('Categoria cadastrado com sucesso!')
-      this.findAllCategorias()
-      this.categoria = new Categoria()      
+      console.log(this.categoria)
     })
   }
 
-  findAllCategorias(){
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
-      this.listaCategorias = resp
-    })
-  }
 
 }

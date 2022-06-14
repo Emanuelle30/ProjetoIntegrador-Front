@@ -28,7 +28,7 @@
     </div>
 </div>
 
-<div class="card" *ngFor='let item of listaProduto' style="width: 18rem;">
+<div class="card" *ngFor='let item of produtoService.listaProdutos' style="width: 18rem;">
     <img src="{{item.foto}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{item.nome}}</h5>
@@ -36,4 +36,4 @@
       <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}</small></p>
       <a href="#" class="btn btn-primary">Comprar</a>
     </div>
-  </div>
+</div>
