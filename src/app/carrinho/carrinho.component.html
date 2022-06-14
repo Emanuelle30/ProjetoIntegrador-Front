@@ -3,22 +3,45 @@
         <h5 class="mb-5 mt-5">CARRINHO</h5>
     
 
-    <!-- forms CEP -->
+    <!-- ! forms CEP -->
+
 <form>
     <div class="card col-md-6" style="width: 35rem;">
         <div class="card-body">
           <div class="form-group col-md-9">
             <h5 class="card-title">
             <label for="inputCEP">Calcular frete e prazo</label>
-            <input type="text" class="form-control" id="inputCEP" placeholder="Digite seu CEP aqui">
+            <input [(ngModel)]="this.cep" type="text" class="form-control" id="inputCEP" placeholder="Digite seu CEP aqui">
             </h5>
-            <button type="submit" class="btn btn-primary">Calcular frete</button>
+
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Calcular frete
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">&nbsp; FRETE GRÁTIS! 🥳</h3>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-muted">Aproveite! Promoção de inauguração válida até 13/07/2022.</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
 </form>
 
-    <!-- / forms CEP -->
+    <!-- ! / forms CEP -->
 
     <!-- card miniatura do produto -->
 
@@ -28,27 +51,42 @@
           <img src="" alt="foto do produto aqui">
 
           <h1>Quantidade</h1>
-          <button>-</button>
-          <input type="text">
-            <option value="">1- exemplo</option>
-          <button>+</button>
+          <button (click)="offClick()">-</button>
+            <option value="">{{sumValue}}</option>
+          <button (click)="onClick()">+</button>
         </div>
       </div>
 
    <!-- / card miniatura do produto -->
 
+<!-- ! modal de finalizar compra -->
 
-   <!-- card vazio-->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Finalizar compra
+</button>
 
-   <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">CARD VAZIO</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Compra realizada com sucesso!</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-muted"> Aguarde... Em instantes você recebera todas as informações da compra através do e-mail cadastrado!</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" routerLink="/inicio">Ok</button>
+      </div>
     </div>
   </div>
+</div>
 
-     <!-- /card vazio-->
+<!-- ! / modal de finalizar compra -->
 
 </div>
 </div>

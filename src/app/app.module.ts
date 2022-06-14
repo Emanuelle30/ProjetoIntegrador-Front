@@ -35,7 +35,7 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     ProdutoDeleteComponent,
     CategoriaEditComponent,
     CategoriaDeleteComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,
