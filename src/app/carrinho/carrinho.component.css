@@ -17,3 +17,9 @@
 .fw {
     font-weight: bold
 }
+
+.borda {
+    border-radius: 1rem;
+    border:#c77c00;
+
+  }
