@@ -10,7 +10,7 @@
               <label for="inputCEP">Calcular frete e prazo</label>
             </h4>
 
-<!--  calcular frete e prazo -->
+    <!--  calcular frete e prazo -->
             <div class="d-flex align-items-center">
               <input
                 (input)='getcep()'
@@ -67,7 +67,7 @@
                 </div>
               </div>
             </div>
-<!-- / calcular frete e prazo -->
+  <!-- / calcular frete e prazo -->
 
           </div>
         </div>
@@ -83,18 +83,13 @@
         <p class="card-subtitle mb-4 mt-2 ml-1">
           Vendido e entregue por <a href="">Compra, visse?!</a>
         </p>
-
-        <div class="d-flex align-items-end">
-
+        <div class="d-flex align-items-center">
           <img class="w-50" src="../../assets/img/3.jpg" alt="foto do produto aqui" />
-
-        <p class="ml-4">Quantidade:</p>
-        <button class="ml-3" (click)="offClick()">-</button>
+        <p class="ml-4 mt-3">Quantidade:</p>
+        <button class="ml-3 borda bg-verao" (click)="offClick()"> <i class="fa fa-minus text-white" aria-hidden="true"></i> </button>
         <option  class="ml-2"value="">{{ sumValue }}</option>
-        <button  class="ml-2" (click)="onClick()">+</button>
-
+        <button  class="ml-2 borda bg-verao" (click)="onClick()"> <i class="fa fa-plus text-white" aria-hidden="true"></i> </button>
       </div>
-
       </div>
     </div>
 
@@ -157,5 +152,19 @@
     </div>
 
     <!-- ! / modal de finalizar compra -->
+
+ <!-- ! card valor total-->
+  <div class="container d-flex justify-content-center">
+  <div class="col-md-3">
+
+    <div class="card text-center" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Título especial</h5>
+        <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
+        <a href="#" class="btn btn-primary">Visitar</a>
+      </div>
+    </div>
   </div>
+<!-- ! /card valor total-->
+</div>
 </div>
