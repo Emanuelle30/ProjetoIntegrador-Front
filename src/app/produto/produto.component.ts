@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { AuthService } from '../service/auth.service';
+import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -19,13 +20,18 @@ export class ProdutoComponent implements OnInit {
   listaProdutos: Produto[];
   idProd: number
 
+  produtos: Produto;
+
+
   constructor(
     public auth: AuthService,
     private prod: ProdutoService,
     private catg: CategoriaService,
     private router: Router,
     private produtoService: ProdutoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+
+    private carrinho: CarrinhoService,
 
   ) { }
 
@@ -34,6 +40,8 @@ export class ProdutoComponent implements OnInit {
     this.idProd = this.route.snapshot.params['id']
     this.findByIdProduto(this.idProd)
 
+    this.getAllCategorias();
+    this.getAllProdutos();
   }
 
   getAllCategorias() {
@@ -61,5 +69,18 @@ export class ProdutoComponent implements OnInit {
       this.produto = resp
     })
 
+}
+
+// ! adições para carrinho:
+
+getProdutoById(id: number){
+  this.prod.getByIdProduto(id).subscribe((resp: Produto) =>{
+    this.produto = resp;
+    this.addProduto()
+  })
+}
+
+addProduto(){
+  this.carrinho.adicionar(this.produto)
 }
 }

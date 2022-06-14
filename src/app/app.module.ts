@@ -41,7 +41,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     CadcategoriaComponent,
     CarrinhoComponent,
     CategoriaDeleteComponent,
-    UsuarioEditComponent
+    UsuarioEditComponent,
 
   ],
   imports: [
