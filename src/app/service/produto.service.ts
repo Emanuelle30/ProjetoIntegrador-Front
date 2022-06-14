@@ -12,6 +12,8 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) { }
 
+  listaProdutos: Produto[]
+
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
@@ -24,6 +26,11 @@ export class ProdutoService {
 
   getByIdProduto(id: number): Observable<Produto> {
     return this.http.get<Produto>(`https://compravisse.herokuapp.com/produtos/${id}`, this.token)
+  }
+
+  //Método GET: para achar produto de acordo com seu nome, será usado na barra de pesquisa
+  getByNomeProduto(nome: string): Observable<Produto[]> {
+    return this.http.get<Produto[]>(`https://compravisse.herokuapp.com/produtos/nome/${nome}`, this.token)
   }
 
   getAllProduto(): Observable<Produto[]>{

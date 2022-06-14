@@ -1,68 +1,70 @@
-<div class="container-fluid">
-    <div class="row bg-white">
-        <div class="col-md-12">
-
-
-
-            <a routerLink="/inicio" class=" text-left">
-
-                <i class="fa fa-angle-double-left" aria-hidden="true"></i> início
-
-            </a>
-
-            <h1 class="fs-54 text-center font-candara">Categorias</h1>
-            <h5 class="fs-18 text-center font-candara">Veja aqui todas as categorias cadastradas ou cadastre uma nova:</h5>
-
-            <div class="row d-flex justify-content-center mt-4 mb-5">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <input [(ngModel)]="categoria.descricao" type="text" class="form-control" id="descricao" placeholder="Digite a descrição da categoria">
+<div class="container-fluid mt-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8 flex-column ">
+            <div class="row text-color-outono mt-2">
+                <h4 class="ml-5">Navegue por estações:</h4>
+                <div class="col-md-12 d-flex justify-content-around mt-3">            
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="circulo bg-primavera mb-2"></div>  
+                        <h5 class="text-bold">Primavera</h5>
                     </div>
-
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-info font-candara" (click)="cadastrar()" >Cadastrar</button>
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="circulo bg-verao mb-2"></div>
+                        <h5 class="text-bold">Verão</h5> 
                     </div>
-
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="circulo bg-outono mb-2"></div>
+                        <h5 class="text-bold">Outono</h5>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="circulo bg-inverno mb-2"></div> 
+                        <h5 class="text-bold">Inverno</h5> 
+                    </div>                           
                 </div>
             </div>
-
+            
+        
+        
+            <div class="row d-flex justify-content-around p-0 m-0 p-sm-0 m-sm-0">
+                <div class="produto-card my-3" *ngFor="let produto of categoria.produto">
+                  <div class="card">
+                    <a [routerLink]="['/detalhesProduto', produto.id]">
+                      <img
+                        [src]="produto.foto"
+                        alt="Card image cap"
+                        class="imagem-card"
+                      />
+                    </a>
+                    <div class="card-body p-0">
+                      <p
+                        class="card-text text-center fw-bold text-nowrap elipse m-1 fs-6"
+                      >
+                        {{ produto.nome }}
+                      </p>
+                      <div class="d-flex">
+                        <div class="d-flex flex-column justify-content-between m-2">
+                          <small
+                            class="m-1 fw-bold text-line-decoration"
+                            >{{ produto.preco | currency: "BRL" }}</small
+                          >
+                          <h5 class="mx-1 mb-0 text-blue">
+                            {{ produto.preco - produto.preco * 0.15 | currency: "BRL" }}
+                          </h5>
+                          <small class="mx-1 mt-2 pb-2 text-small text-blue"
+                            >Vendido por: {{produto.usuario.nome}}</small>
+                            
+                        </div>
+                      </div>
+                      <button class="btn w-100 comprar text-white bg-outono">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        <span class="ml-2">Comprar</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
         </div>
     </div>
-</div>
 
-<div class="container">
-
-    <div class="row mt-5">
-        <div class="col-md-12">
-            <h2 class="text-center">Todas as categorias</h2>
-        </div>
-    </div>
-
-    <div class="row mt-3 mb-5 d-flex justify-content-center">
-        <div class="col-md-6">
-
-            <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col" class="text-right">Modificações</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr *ngFor="let item of listaCategorias">
-                    <th scope="row">{{item.id}}</th>
-                    <td>{{item.descricao}}</td>
-                    <td class="d-flex justify-content-end">
-                      <button class="btn btn-info mr-3" [routerLink]="['/categoria-edit', item.id]">Editar</button>
-                      <button class="btn btn-danger" [routerLink]="['/categoria-delete', item.id]">Apagar</button>
-                    </td>
-                  </tr>                  
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-
-</div>
