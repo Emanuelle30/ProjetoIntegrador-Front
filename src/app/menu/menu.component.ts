@@ -18,6 +18,7 @@ export class MenuComponent implements OnInit {
 
   nome = environment.nome
   foto = environment.foto
+
   nomeProduto: string
   nomeCategoria: string
   produtosPorCategoria: string
@@ -26,6 +27,9 @@ export class MenuComponent implements OnInit {
   listaCategoria: Categoria[]
 
   usuario: Usuario = new Usuario()
+
+  id = environment.id
+
 
   constructor(
     private router: Router,

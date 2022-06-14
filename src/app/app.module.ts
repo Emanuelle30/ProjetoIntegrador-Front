@@ -19,6 +19,8 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { CadcategoriaComponent } from './cadcategoria/cadcategoria.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 
 @NgModule({
@@ -36,7 +38,11 @@ import { CadcategoriaComponent } from './cadcategoria/cadcategoria.component';
     ProdutoDeleteComponent,
     CategoriaEditComponent,
     CategoriaDeleteComponent,
-    CadcategoriaComponent    
+    CadcategoriaComponent,
+    CarrinhoComponent,
+    CategoriaDeleteComponent,
+    UsuarioEditComponent
+
   ],
   imports: [
     BrowserModule,
