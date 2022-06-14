@@ -15,7 +15,7 @@ import { ProdutoService } from '../service/produto.service';
 export class InicioComponent implements OnInit {
 
   produto: Produto = new Produto()
-  listaProduto: Produto[]
+  // listaProduto: Produto[]
   // listaProduto = this.produtoService.listaProdutos
 
 
@@ -57,8 +57,8 @@ export class InicioComponent implements OnInit {
 
     getAllProdutos(){
       this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
-      // this.produtoService.listaProdutos = resp
-      this.listaProduto= resp
+      this.produtoService.listaProdutos = resp
+      // this.listaProduto= resp
       })
       }
 

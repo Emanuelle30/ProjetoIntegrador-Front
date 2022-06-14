@@ -51,7 +51,9 @@ export class MenuComponent implements OnInit {
   
   findByNomeProduto(){
     if(this.nomeProduto == ''){
-      this.produtoService.getAllProduto()
+      this.produtoService.getAllProduto().subscribe((resp: Produto[])=> {
+        this.produtoService.listaProdutos = resp
+      })
     } else{
       this.produtoService.getByNomeProduto(this.nomeProduto).subscribe((resp: Produto[])=>{
         this.produtoService.listaProdutos = resp

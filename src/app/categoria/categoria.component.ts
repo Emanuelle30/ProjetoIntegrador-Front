@@ -22,6 +22,7 @@ export class CategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.route.params.subscribe(({id}) => this.findByIdTema(id))
     this.idCategoria = this.route.snapshot.params['id']
     this.findByIdTema(this.idCategoria)
     this.categoria.produto = this.listaProduto    
@@ -30,6 +31,7 @@ export class CategoriaComponent implements OnInit {
   findByIdTema(id: number){
     this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
       this.categoria = resp
+      console.log(this.categoria)
     })
   }
 

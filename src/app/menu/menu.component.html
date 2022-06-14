@@ -9,7 +9,7 @@
           </li>            
       </ul>
   
-      <ul class="navbar-nav ml-auto d-flex align-items-center">
+      <ul class="navbar-nav ml-auto d-flex justify-content-around align-items-center ">
           <li class="nav-item pl-3">
               <a href="">
                 <p class="text-color-outono m-0">
@@ -18,13 +18,13 @@
               </a> 
           </li>            
           <li class="nav-item pl-3 fs-10 mt-2">
-            <div class="col-md-2 d-flex align-items-center justify-content-center" *ngIf='!auth.logado()'>
+            <div class=" d-flex align-items-center justify-content-center" *ngIf='!auth.logado()'>
               <p class="text-center">
                 Faça <a routerLink="/login">Login</a><br>              
                 ou <a routerLink="/cadastro">Cadastre-se</a>
               </p>
             </div>
-            <div class="col-md-2 d-flex flex-column align-items-center justify-content-center" *ngIf='auth.logado()'>
+            <div class=" d-flex flex-column align-items-center justify-content-center" *ngIf='auth.logado()'>
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                 Olá, {{auth.nome}}
               </a>
