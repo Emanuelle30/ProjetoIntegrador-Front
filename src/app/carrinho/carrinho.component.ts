@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
-import { CepService } from '../service/cep.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -17,7 +16,6 @@ export class CarrinhoComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private cepService: CepService,
   ) { }
 
   ngOnInit() {
@@ -38,16 +36,5 @@ export class CarrinhoComponent implements OnInit {
         this.sumValue=this.sumValue-1;
       }
     }
-    
-
-    getCep(){
-      if(this.cep.length >= 8) {
-        this.cepService.getCep(this.cep).subscribe((resp: any) => {
-        })
-      } else {
-        alert('CEP inválido.')
-      }
-    }
   
-
 }

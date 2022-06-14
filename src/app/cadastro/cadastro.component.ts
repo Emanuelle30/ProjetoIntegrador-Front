@@ -26,13 +26,7 @@ export class CadastroComponent implements OnInit {
   }
 
   confirmSenha(event: any) {
-    this.confirmarSenha = event.target.value
-    if(this.usuario.senha == this.confirmarSenha){
-      this.senha = true
-    } else{
-      this.senha = false
-    }
-    return this.senha     
+    this.confirmarSenha = event.target.value   
   }
 
   tipoUsuario(event: any) {
@@ -41,27 +35,22 @@ export class CadastroComponent implements OnInit {
 
   cadastro(){
     this.usuario.tipo = this.tipoUser
-    console.log('botao funcionou')
-    if(this.senha == true){
+    if(this.confirmarSenha == this.usuario.senha){
       this.authService.cadastrar(this.usuario).subscribe({
         next: (resp:Usuario)=>{
         this.usuario = resp;
         alert('Usuario cadastrado com sucesso!')
         this.router.navigate(['/login'])
-        console.log('estranhamente entrou aqui')
       }, 
       error: erro => {
         if (erro.status == 400) {
           alert('Usuário já cadastrado! Faça login.')
           this.router.navigate(['/login'])
         } 
-        // Não gera erro
-        //if (erro.status != 400) {
-        //   alert('Senhas não coicidem.')
-        //   console.log('Entrou no else, mas n emitiu alerta.')
-        // }
       },
     })    
+  } else {
+    alert('As senhas não coincidem')
   }
 }
 

@@ -1,92 +1,158 @@
 <div class="container mt-5 mb-5">
-    <div class="col-md-12">
-        <h5 class="mb-5 mt-5">CARRINHO</h5>
-    
+  <div class="col-md-12">
+    <h3 class="mb-4 ml-3">CARRINHO</h3>
 
-    <!-- ! forms CEP -->
-
-<form>
-    <div class="card col-md-6" style="width: 35rem;">
+    <form>
+      <div class="card col-md-12" style="width: 35rem">
         <div class="card-body">
-          <div class="form-group col-md-9">
-            <h5 class="card-title">
-            <label for="inputCEP">Calcular frete e prazo</label>
-            <input [(ngModel)]="this.cep" type="text" class="form-control" id="inputCEP" placeholder="Digite seu CEP aqui">
-            </h5>
+          <div class="form-group col-md-12">
+            <h4 class="card-title">
+              <label for="inputCEP">Calcular frete e prazo</label>
+            </h4>
 
-            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Calcular frete
-</button>
+<!--  calcular frete e prazo -->
+            <div class="d-flex align-items-center">
+              <input
+                type="text"
+                class="form-control mr-3"
+                id="inputCEP"
+                placeholder="Digite seu CEP aqui"
+              />
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">&nbsp; FRETE GRÁTIS! 🥳</h3>
-      </div>
-      <div class="modal-body">
-        <h5 class="text-muted">Aproveite! Promoção de inauguração válida até 13/07/2022.</h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn bg-inverno fw w-50 text-white"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Calcular frete
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title" id="exampleModalLabel">
+                        &nbsp; FRETE GRÁTIS! 🥳
+                      </h3>
+                    </div>
+                    <div class="modal-body">
+                      <h5 class="text-muted">
+                        Aproveite! Promoção de inauguração válida até
+                        13/07/2022.
+                      </h5>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-success"
+                        data-dismiss="modal"
+                      >
+                        Fechar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!-- / calcular frete e prazo -->
 
           </div>
         </div>
       </div>
-</form>
+    </form>
 
-    <!-- ! / forms CEP -->
+  
 
     <!-- card miniatura do produto -->
 
-    <div class="card mb-5 mt-5" style="width: 18rem;">
-        <div class="card-body">
-          <p class="card-subtitle mb-2">Vendido e entregue por <a href="">Compra, visse?!</a></p>
-          <img src="" alt="foto do produto aqui">
+    <div class="card mb-5  mt-5" style="width: 35rem">
+      <div class="card-body ml-3">
+        <p class="card-subtitle mb-4 mt-2 ml-1">
+          Vendido e entregue por <a href="">Compra, visse?!</a>
+        </p>
 
-          <h1>Quantidade</h1>
-          <button (click)="offClick()">-</button>
-            <option value="">{{sumValue}}</option>
-          <button (click)="onClick()">+</button>
-        </div>
+        <div class="d-flex align-items-end">
+
+          <img class="w-50" src="../../assets/img/3.jpg" alt="foto do produto aqui" />
+
+        <p class="ml-4">Quantidade:</p>
+        <button class="ml-3" (click)="offClick()">-</button>
+        <option  class="ml-2"value="">{{ sumValue }}</option>
+        <button  class="ml-2" (click)="onClick()">+</button>
+
       </div>
 
-   <!-- / card miniatura do produto -->
-
-<!-- ! modal de finalizar compra -->
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Finalizar compra
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">Compra realizada com sucesso!</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h5 class="text-muted"> Aguarde... Em instantes você recebera todas as informações da compra através do e-mail cadastrado!</h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal" routerLink="/inicio">Ok</button>
       </div>
     </div>
+
+    <!-- / card miniatura do produto -->
+
+    <!-- ! modal de finalizar compra -->
+
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+    >
+      Finalizar compra
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLongTitle">
+              Compra realizada com sucesso!
+            </h3>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5 class="text-muted">
+              Aguarde... Em instantes você recebera todas as informações da
+              compra através do e-mail cadastrado!
+            </h5>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-dismiss="modal"
+              routerLink="/inicio"
+            >
+              Ok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ! / modal de finalizar compra -->
   </div>
-</div>
-
-<!-- ! / modal de finalizar compra -->
-
-</div>
 </div>
