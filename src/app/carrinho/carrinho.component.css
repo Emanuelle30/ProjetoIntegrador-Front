@@ -18,6 +18,7 @@
     font-weight: bold
 }
 
+
 .produtoFoto {
     min-height: 100%;
     max-height: 150px;
@@ -25,8 +26,8 @@
     object-fit: cover;
 }
 
+
 .borda {
     border-radius: 1rem;
     border:#c77c00;
-
 }
