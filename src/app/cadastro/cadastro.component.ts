@@ -50,7 +50,7 @@ export class CadastroComponent implements OnInit {
       },
     })    
   } else {
-    alert('As senhas não coincidem')
+    alert('As senhas não coincidem!')
   }
 }
 
