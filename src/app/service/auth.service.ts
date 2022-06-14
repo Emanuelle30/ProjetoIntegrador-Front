@@ -14,6 +14,8 @@ export class AuthService {
     private http: HttpClient
   ) {}
 
+  nome: string 
+
   login(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
     return this.http.post<UsuarioLogin>('https://compravisse.herokuapp.com/usuarios/logar', usuarioLogin)
   }

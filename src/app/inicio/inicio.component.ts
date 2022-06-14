@@ -16,6 +16,7 @@ export class InicioComponent implements OnInit {
 
   produto: Produto = new Produto()
   listaProduto: Produto[]
+  // listaProduto = this.produtoService.listaProdutos
 
 
   categoria: Categoria = new Categoria()
@@ -25,12 +26,9 @@ export class InicioComponent implements OnInit {
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
 
-
-
-
   constructor(
     private router: Router,
-    private produtoService: ProdutoService,
+    public produtoService: ProdutoService,
     private categoriaService: CategoriaService
   ) {}
 
@@ -59,7 +57,8 @@ export class InicioComponent implements OnInit {
 
     getAllProdutos(){
       this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
-      this.listaProduto = resp
+      // this.produtoService.listaProdutos = resp
+      this.listaProduto= resp
       })
       }
 
