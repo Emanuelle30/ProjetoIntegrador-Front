@@ -36,5 +36,9 @@ export class CarrinhoComponent implements OnInit {
         this.sumValue=this.sumValue-1;
       }
     }
+
+    getcep(){
+      
+    }
   
 }
