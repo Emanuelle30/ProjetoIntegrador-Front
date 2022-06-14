@@ -12,6 +12,7 @@ export class CarrinhoComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
   cep: string
+  getCep : string
 
   constructor(
     private authService: AuthService,
@@ -37,8 +38,11 @@ export class CarrinhoComponent implements OnInit {
       }
     }
 
-    getcep(){
-      
-    }
+    // getCep(){
+    //   if(this.cep.length >= 8) {
+    //   this.cep.getCep(this.cep).subscribe((resp:any) =>{
+    //   this.cep = resp})
+    //   }
+    //   }
   
 }
