@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { CarrinhoService } from '../service/carrinho.service';
+import { CategoriaService } from '../service/categoria.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -11,12 +14,21 @@ import { AuthService } from '../service/auth.service';
 export class CarrinhoComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
+
   cep: string
   getCep : string
+
+  listaCompras = this.carrinho.listar()
+  comprados = this.carrinho.listar();
 
   constructor(
     private authService: AuthService,
     private router: Router,
+
+    private carrinho: CarrinhoService,
+    private prod: ProdutoService,
+    private cat: CategoriaService,
+    private auth: AuthService
   ) { }
 
   ngOnInit() {
@@ -37,6 +49,15 @@ export class CarrinhoComponent implements OnInit {
         this.sumValue=this.sumValue-1;
       }
     }
+
+    total() {
+      return this.comprados.map((item) => item.preco).reduce((a, b) => a + b, 0);
+    }
+  
+    parcela(){
+      return this.total()/12
+    }
+  
 
     // getCep(){
     //   if(this.cep.length >= 8) {
