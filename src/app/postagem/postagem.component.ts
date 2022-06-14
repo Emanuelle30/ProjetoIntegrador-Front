@@ -35,7 +35,7 @@ export class PostagemComponent implements OnInit {
 
     if(environment.token == ''){
       alert('Faça login para inserir um novo produto.')
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/login'])
     }
     
     this.produtoService.refreshToken()

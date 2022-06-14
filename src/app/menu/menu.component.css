@@ -52,4 +52,9 @@
 
 input::placeholder {
     color: white;
-  }
+}
+
+.text-format:hover{
+    background-color:#c77c00;
+    color: white;
+}
