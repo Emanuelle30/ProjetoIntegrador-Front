@@ -16,7 +16,7 @@ export class InicioComponent implements OnInit {
 
   produto: Produto = new Produto()
   // listaProduto: Produto[]
-  // listaProduto = this.produtoService.listaProdutos
+  listaProduto: any = []
 
 
   categoria: Categoria = new Categoria()
@@ -61,6 +61,8 @@ export class InicioComponent implements OnInit {
     getAllProdutos(){
       this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
       this.produtoService.listaProdutos = resp
+      this.listaProduto = this.produtoService.listaProdutos
+      
       // this.listaProduto= resp
       })
       }
