@@ -53,7 +53,8 @@ export class CarrinhoComponent implements OnInit {
     }
 
     total() {
-      return this.comprados.map((item) => item.preco).reduce((a, b) => a + b, 0);
+      return this.comprados.map((item) => +item.preco).reduce((a, b) => a + b, 0);
+      
     }
   
     parcela(){

@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastro', component: CadastroComponent},
   {path: 'categoria/:id', component: CategoriaComponent},
-  {path: 'produto', component: ProdutoComponent},
+  {path: 'produto/:id', component: ProdutoComponent},
   {path: 'postagem', component: PostagemComponent},
   {path: 'carrinho', component: CarrinhoComponent},
 
@@ -31,7 +31,7 @@ const routes: Routes = [
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
   {path: 'usuario-edit/:id', component: UsuarioEditComponent },
   {path: 'cadcategoria', component: CadcategoriaComponent},
-  { path: 'usuario-edit/:id', component: UsuarioEditComponent }
+  { path: 'usuario-edit/:id', component: UsuarioEditComponent },
 
 ];
 
