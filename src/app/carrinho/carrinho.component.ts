@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { CarrinhoService } from '../service/carrinho.service';
@@ -17,6 +18,7 @@ export class CarrinhoComponent implements OnInit {
 
   cep: string
   getCep : string
+  produto: Produto
 
   listaCompras = this.carrinho.listar()
   comprados = this.carrinho.listar();
