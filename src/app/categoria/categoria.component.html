@@ -57,7 +57,8 @@
                       </div>
                       <button class="btn w-100 comprar text-white bg-outono">
                         <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                        <span class="ml-2">Comprar</span>
+                        <span class="ml-2" routerLink="/carrinho"
+                        (click)='getProdutoById(produto.id)'>Comprar</span>
                       </button>
                     </div>
                   </div>

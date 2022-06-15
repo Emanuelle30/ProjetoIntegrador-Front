@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from '../model/Produto';
+import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriaService } from '../service/categoria.service';
+import { ProdutoService } from '../service/produto.service';
 
 
 @Component({
@@ -15,10 +17,14 @@ export class CategoriaComponent implements OnInit {
   categoria: Categoria = new Categoria()
   idCategoria: number
   listaProduto: Produto []
+  produto: Produto = new Produto()
+  
   
   constructor(
     private categoriaService: CategoriaService,    
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private carrinho: CarrinhoService,
+    private prod: ProdutoService
   ) { }
 
   ngOnInit() {
@@ -35,5 +41,17 @@ export class CategoriaComponent implements OnInit {
     })
   }
 
+  getProdutoById(id: number){
+    this.prod.getByIdProduto(id).subscribe((resp: Produto) =>{
+      this.produto = resp;
+      this.addProduto()
+    })
+  }
+
+  addProduto(){
+    this.carrinho.adicionar(this.produto)
+  }
 
 }
+
+
