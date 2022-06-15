@@ -1,5 +1,5 @@
-<div class="container mt-5 mb-5">
-  <div class="col-md-12">
+<div class="container d-flex mt-5 mb-5">
+  <div class="col-md-8">
     <h3 class="mb-4 ml-3">CARRINHO</h3>
 
     <form>
@@ -137,104 +137,142 @@
 
           <!--  CARD CALC PRECO DOS PRODUTOS -->
 
-          <div class="d-flex align-content-center mt-3 ml-5">
-            <div class="card" style="width: 22rem">
-              <div class="card-body">
-                <div class="col-12">
-                  <div class="row d-flex">
-                    <div class="col-12">
-                      <div
-                        class="row d-flex justify-content-center align-items-center"
-                      >
-                        <h4 class="text-center mt-3">
-                          Total: {{ total() | currency: "BRL" }}
-                        </h4>
-                        <p class="text-center">
-                          em até 12 parcelas de:
-                          {{ parcela() | currency: "BRL" }}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+          
+
+          <!--  / FIM CARD CALC PRECO DOS PRODUTOS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inicio do card de total - alinhado na direita -->
+  <div class="col-md-4">
+    <div class="d-flex align-content-center mt-3 ">
+      <div class="card" style="width: 100%">
+        <div class="card-body">
+          <div class="col-12">
+            <div class="row d-flex">
+              <div class="col-12">
+                <div
+                  class="row d-flex justify-content-center align-items-center"
+                >
+                  <h4 class="text-center mt-3">
+                    Total: {{ +total() | currency: "BRL" }}
+                  </h4>
+                  <p class="text-center">
+                    em até 12 parcelas de:
+                    {{ parcela() | currency: "BRL" }}
+                  </p>
                 </div>
-
-                <!-- ! Botão e modal de finalizar compra -->
-
-                <div class="row">
-                  <div class="col-12">
-                    <div class="row justify-content-center">
-                      <!-- botão -->
-                      <button
-                        type="button"
-                        class="btn bg-inverno fw text-white mb-2"
-                        data-toggle="modal"
-                        data-target="#exampleModalCenter"
-                      >
-                        Finalizar compra
-                      </button>
-
-                      <!-- Modal -->
-                      <div
-                        class="modal fade"
-                        id="exampleModalCenter"
-                        tabindex="-1"
-                        role="dialog"
-                        aria-labelledby="exampleModalCenterTitle"
-                        aria-hidden="true"
-                      >
-                        <div
-                          class="modal-dialog modal-dialog-centered"
-                          role="document"
-                        >
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h3
-                                class="modal-title"
-                                id="exampleModalLongTitle"
-                              >
-                                Compra realizada com sucesso!
-                              </h3>
-                              <button
-                                type="button"
-                                class="close"
-                                data-dismiss="modal"
-                                aria-label="Close"
-                              >
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <h5 class="text-muted">
-                                Aguarde... Em instantes você recebera todas as
-                                informações da compra através do e-mail
-                                cadastrado!
-                              </h5>
-                            </div>
-                            <div class="modal-footer">
-                              <button
-                                type="button"
-                                class="btn btn-success"
-                                data-dismiss="modal"
-                                routerLink="/inicio"
-                              >
-                                Ok
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- ! / FIM modal de finalizar compra -->
-
               </div>
             </div>
           </div>
 
-          <!--  / FIM CARD CALC PRECO DOS PRODUTOS -->
+          <!-- ! Botão e modal de finalizar compra -->
 
+          <div class="row">
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <!-- botão -->
+                <button
+                  type="button"
+                  class="btn bg-inverno fw text-white mb-2"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                >
+                  Finalizar compra
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- ! / FIM modal de finalizar compra -->
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">
+          Compra realizada com sucesso!
+        </h3>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-muted">
+          Aguarde... Em instantes você recebera todas as informações da compra
+          através do e-mail cadastrado!
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-success"
+          data-dismiss="modal"
+          routerLink="/inicio"
+        >
+          Ok
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">
+          Compra realizada com sucesso!
+        </h3>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-muted">
+          Aguarde... Em instantes você recebera todas as informações da compra
+          através do e-mail cadastrado!
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-success"
+          data-dismiss="modal"
+          routerLink="/inicio"
+        >
+          Ok
+        </button>
       </div>
     </div>
   </div>

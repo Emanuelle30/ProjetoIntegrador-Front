@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastro', component: CadastroComponent},
   {path: 'categoria/:id', component: CategoriaComponent},
-  {path: 'produto', component: ProdutoComponent},
+  {path: 'produto/:id', component: ProdutoComponent},
   {path: 'postagem', component: PostagemComponent},
   {path: 'carrinho', component: CarrinhoComponent},
 
