@@ -4,14 +4,19 @@
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner center-block">
                     <div class="carousel-item active">
-                        <img src="../../assets/img/a.jpeg" class="d-block w-100" alt="...">
+                        <img src="../../assets/img/Calça.jpeg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="../../assets/img/2.jpg" class="d-block w-100" alt="...">
+                        <img src="../../assets/img/Pessoas.jpeg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="../../assets/img/3.jpg" class="d-block w-100" alt="...">
-    
+                        <img src="../../assets/img/Calças dobradas.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../assets/img/Calças.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../assets/img/Pessoas2.jpeg" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
@@ -28,12 +33,16 @@
     </div>
 </div>
 
-<div class="card" *ngFor='let item of listaProduto' style="width: 18rem;">
-    <img src="{{item.foto}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{item.nome}}</h5>
-      <p class="card-text">{{item.preco | currency: "BRL"}}</p>
-      <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}</small></p>
-      <a [routerLink]="['/produto', item.id]" class="btn btn-primary">Comprar</a>
+  <div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="card" *ngFor='let item of listaProduto' style="width: 16rem;">
+            <img src="{{item.foto}}" class="card-img-top w-30 h-50" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.nome}}</h5>
+                <p class="card-text">{{item.preco | currency: "BRL"}}</p>
+                <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}</small></p>
+                <a [routerLink]="['/produto', item.id]" class="btn btn-primary btn btn-primary">Comprar</a>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
