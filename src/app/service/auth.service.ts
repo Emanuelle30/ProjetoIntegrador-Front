@@ -50,4 +50,13 @@ export class AuthService {
     return ok
   }
 
+  tipoUser(){
+    let vendedor: boolean = false
+
+    if (environment.tipo == 'adm'){
+      vendedor = true 
+    }
+    return vendedor
+  }
+
 }

@@ -29,13 +29,17 @@
               <div class="dropdown">
                 <a class="nav-link dropdown-toggle text-color-outono text-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                   Olá, {{auth.nome}}
-                </a>
+                </a>                
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" *ngIf="auth.tipoUser()" [routerLink]="['/postagem']" href="#">
+                    <i class="fa fa-shopping-bag mr-1" aria-hidden="true"></i>
+                    Postar itens
+                  </a>
+                  <a class="dropdown-item" *ngIf="!auth.tipoUser()" href="#">
                     <i class="fa fa-shopping-bag mr-1" aria-hidden="true"></i>
                     Meus pedidos
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" *ngIf="!auth.tipoUser()" href="#">
                     <i class="fa fa-heart mr-1" aria-hidden="true"></i>
                     Meus favoritos
                   </a>
@@ -55,6 +59,7 @@
               </p>
             </a> 
           </li>
+          
           
           <!-- ! carrinho icone notificação -->
 

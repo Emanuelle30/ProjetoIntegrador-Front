@@ -47,7 +47,7 @@ export class MenuComponent implements OnInit {
   nomeUsuario(){
     this.usuario.nome = this.nome
     return this.usuario.nome
-  }
+  }  
 
   getAllCategorias() {
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
