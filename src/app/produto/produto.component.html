@@ -14,12 +14,18 @@
             <div class="col-md-9">
                 <hr>
             </div>
-            <div class="row d-flex ml-5">
-                <i class="fa fa-star-o ml-2" aria-hidden="true"></i>
-                <i class="fa fa-star-o ml-2" aria-hidden="true"></i>
-                <i class="fa fa-star-o ml-2" aria-hidden="true"></i>
-                <i class="fa fa-star-o ml-2" aria-hidden="true"></i>
-                <i class="fa fa-star-o ml-2" aria-hidden="true"></i>
+            <div class="row d-flex ml-4 rating-stars">
+                <input type="radio" name="rating" id="rs0" checked><label for="rs0"></label>
+                <input type="radio" name="rating" id="rs1"><label for="rs1"></label>
+                <input type="radio" name="rating" id="rs2"><label for="rs2"></label>
+                <input type="radio" name="rating" id="rs3"><label for="rs3"></label>
+                <input type="radio" name="rating" id="rs4"><label for="rs4"></label>
+                <input type="radio" name="rating" id="rs5"><label for="rs5"></label>
+                </div>
+            <script 
+            src="https://kit.fontawesome.com/5ea815c1d0.js"></script>
+            <div class="wraper">
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="gitlabBilal" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
             </div>
             <div class="row d-flex ml-5 mt-3">
                 <h6>Vendido e entregue por {{produto.fornecedor}}</h6>
@@ -30,7 +36,7 @@
             <div class="row d-flex ml-5 mt-3">
                 <h5>Descrição </h5>
             </div>
-            <div class="row d-flex ml-5">
+            <div id="descricao" class="row d-flex mt-2 col-md-9">
                 <h6>{{produto.descricao}}</h6>
             </div>
             <div class="row d-flex ml-5 mt-3">

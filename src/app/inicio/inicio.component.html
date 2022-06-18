@@ -38,7 +38,7 @@
         <div class="produto-card my-3" style="width: 16rem" *ngFor='let item of listaProduto' >
         <div class="card">
             <a [routerLink]="['/produto', item.id]">
-            <img
+            <img style="width: 50px"
                 [src]="item.foto"
                 alt="Card image cap"
                 class="imagem-card"
