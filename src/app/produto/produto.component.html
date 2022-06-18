@@ -2,12 +2,12 @@
     <div class="row">
         <div class="col-md-6" id="img-bg">
             <div class="row d-flex justify-content-end">
-                <img src="{{produto.foto}}" alt="" height="400px" width="500px ">
+                <img src="{{produto.foto}}" alt="" height="550px" width="500px ">
 
             </div>
         </div>
         <div class="col-md-6">
-            <div class="row d-flex ml-5 mt-3">
+            <div class="row d-flex ml-5 mt-3 ">
                 <h2>{{produto.nome}}</h2>
                 <i class="fa fa-heart-o ml-4 mt-3" aria-hidden="true" style="font-size: medium;"></i>
             </div>
@@ -21,7 +21,7 @@
                 <i class="fa fa-star-o ml-2" aria-hidden="true"></i>
                 <i class="fa fa-star-o ml-2" aria-hidden="true"></i>
             </div>
-            <div class="row d-flex ml-5 mt-2">
+            <div class="row d-flex ml-5 mt-3">
                 <h6>Vendido e entregue por {{produto.fornecedor}}</h6>
             </div>
             <div class="row d-flex ml-5 mt-3">
@@ -62,9 +62,12 @@
                     <div class="tab-pane fade" id="pills-xg" role="tabpanel" aria-labelledby="pills-xg-tab"></div>
                   </div>
             </div>
-            <a class="ml-5 btn btn-primary mt-3 mb-5" routerLink="/carrinho"
-             (click)='getProdutoById(produto.id)'>Comprar</a>
-
+            <button class="btn w-5 comprar text-white bg-outono ml-5">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <span class="ml-2" routerLink="/carrinho"
+                (click)='getProdutoById(produto.id)'
+                >Comprar</span>
+            </button>    
         </div>
     </div>
 </div>

@@ -28,7 +28,7 @@
             <div class="row d-flex justify-content-around p-0 m-0 p-sm-0 m-sm-0">
                 <div class="produto-card my-3" *ngFor="let produto of categoria.produto">
                   <div class="card">
-                    <a [routerLink]="['/detalhesProduto', produto.id]">
+                    <a [routerLink]="['/produto', produto.id]">
                       <img
                         [src]="produto.foto"
                         alt="Card image cap"
