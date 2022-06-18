@@ -31,4 +31,12 @@
 
   .text-line-decoration{
     text-decoration: line-through
+
+    }
+
+    .nav-li{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
   }
