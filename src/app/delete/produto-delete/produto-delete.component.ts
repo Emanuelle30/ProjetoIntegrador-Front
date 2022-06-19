@@ -29,7 +29,7 @@ export class ProdutoDeleteComponent implements OnInit {
       if (environment.token == '') {
         this.router.navigate(['/inicio'])
       }
-  
+      this.produtoService.refreshToken()  
       this.idProduto = this.route.snapshot.params['id']
       this.findByIdProduto(this.idProduto)
     }
