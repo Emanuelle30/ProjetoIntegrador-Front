@@ -16,8 +16,6 @@ export class CarrinhoComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
 
-  cep: string
-  getCep : string
   produto: Produto
 
   listaCompras = this.carrinho.listar()
@@ -62,11 +60,4 @@ export class CarrinhoComponent implements OnInit {
     }
   
 
-    // getCep(){
-    //   if(this.cep.length >= 8) {
-    //   this.cep.getCep(this.cep).subscribe((resp:any) =>{
-    //   this.cep = resp})
-    //   }
-    //   }
-  
 }

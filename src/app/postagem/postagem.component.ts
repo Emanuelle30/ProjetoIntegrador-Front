@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -25,16 +26,18 @@ export class PostagemComponent implements OnInit {
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
   nomeUsuario = environment.nome
+
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
   ){ }
 
   ngOnInit(){
 
     if(environment.token == ''){
-      alert('Faça login para inserir um novo produto.')
+      this.alertas.showAlertInfo('Faça login para inserir um novo produto.')
       this.router.navigate(['/login'])
     }
     
@@ -65,7 +68,7 @@ export class PostagemComponent implements OnInit {
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
-      alert('Produto adicionado com sucesso!')
+      this.alertas.showAlertSuccess('Produto adicionado com sucesso!')
       this.produto = new Produto()
     })
    

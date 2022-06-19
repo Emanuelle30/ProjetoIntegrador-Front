@@ -30,7 +30,6 @@ export class ProdutoComponent implements OnInit {
     private router: Router,
     private produtoService: ProdutoService,
     private route: ActivatedRoute,
-
     private carrinho: CarrinhoService,
 
   ) { }
@@ -70,8 +69,6 @@ export class ProdutoComponent implements OnInit {
     })
 
 }
-
-// ! adições para carrinho:
 
 getProdutoById(id: number){
   this.prod.getByIdProduto(id).subscribe((resp: Produto) =>{
