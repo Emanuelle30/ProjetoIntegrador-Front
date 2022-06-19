@@ -6,30 +6,30 @@
     <div class="container-fluid my-4">
       <div class="container">
         <div class="row">
-          <h3 class="text-info">Minhas compras</h3>
+          <h3 class="inverno mb-2">Minhas compras</h3>
         </div>
 
-        <div class="row d-flex align-items-center ">
-          <div class="card col-md-10 justify-content-center p-2">
-
+        <div class="row d-flex align-items-center">
+          <div class="card col-md-10 justify-content-center p-2" *ngFor="let produto of listaCompras">
             <div>
-              <p class="mb-1 mt-1 ml-3">Vendido e entregue por <a href="">Compra, visse?!</a></p>
+              <span class="mb-1 mt-2 ml-5">
+                Vendido e entregue por <a href="">{{produto.fornecedor}}</a>
+              </span>
             </div>
-
-            <div class="row" *ngFor="let produto of listaCompras">
-              <div class="col-3 p-3 ml-5">
-                <img [src]="produto.foto" alt="" class="produtoFoto rounded img" />
+            <div class="row">
+              <div class="col-4 p-3 ml-5">
+                <img [src]="produto.foto" alt="Foto do produto" class="produtoFoto rounded img" />
               </div>
               <div>
 
                 <div class="col-12 d-flex flex-column ">
-                  <div class=" mt-2 ml-4">
+                  <div class=" mt-2 ml-3">
 
                     <span class="d-block p-1 ">{{ produto.nome }}</span>
-                    <span class="d-block p-1 ">Categoria: {{ produto.categoria.descricao }}</span>
-                    <span class="d-block p-1 ">{{ produto.preco | currency: "BRL" }}</span>
+                    <span class="d-block p-1">Categoria: {{ produto.categoria.descricao }}</span>
+                    <span class="d-block p-1"><strong>Preço: {{ produto.preco | currency: "BRL" }}</strong></span>
                     <span class="d-block p-1 ">
-                      <p class="d-flex align-items">Quantidade:
+                      <p class="d-flex align-items mt-1">Quantidade:
                         <button class="ml-2 borda bg-verao" (click)="offClick()">
                           <i class="fa fa-minus text-white" aria-hidden="true"></i>
                         </button>
