@@ -19,6 +19,8 @@ export class CategoriaComponent implements OnInit {
   listaProduto: Produto []
   produto: Produto = new Produto()
   
+  key = 'data'
+  reverse = true
   
   constructor(
     private categoriaService: CategoriaService,    

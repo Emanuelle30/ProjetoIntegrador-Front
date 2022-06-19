@@ -16,9 +16,7 @@ import { ProdutoService } from '../service/produto.service';
 export class InicioComponent implements OnInit {
 
   produto: Produto = new Produto()
-  // listaProduto: Produto[]
   listaProduto: any = []
-
 
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
@@ -26,6 +24,9 @@ export class InicioComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
+
+  key = 'data'
+  reverse = true
 
   constructor(
     private router: Router,

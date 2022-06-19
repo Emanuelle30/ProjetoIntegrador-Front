@@ -50,7 +50,7 @@
 
 <div class="container mt-5">
     <div class="row d-flex justify-content-around p-0 m-0 p-sm-0 m-sm-0">
-        <div class="produto-card my-3" style="width: 16rem" *ngFor='let item of listaProduto' >
+        <div class="produto-card my-3" style="width: 16rem" *ngFor='let item of listaProduto | orderBy : key : reverse' >
         <div class="card">
             <a [routerLink]="['/produto', item.id]">
             <img style="width: 50px"
