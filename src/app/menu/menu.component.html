@@ -94,7 +94,7 @@
             <a class="nav-link text-format" aria-current="page"[routerLink]="['/inicio']">Home</a>
           </li>
           <li class="nav-item navHover w-auto text-format ml-3 mr-3">
-            <a class="nav-link text-format" aria-current="page">Quem somos</a>
+            <a class="nav-link text-format" aria-current="page" [routerLink]="['/quem-somos']" >Quem somos</a>
           </li>
           <li class="nav-item navHover w-auto text-format ml-3 mr-3" *ngFor='let cat of listaCategoria'>
             <a class="nav-link text-format" aria-current="page" [routerLink]="['/categoria', cat.id]">

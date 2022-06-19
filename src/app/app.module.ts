@@ -24,6 +24,7 @@ import { CadcategoriaComponent } from './cadcategoria/cadcategoria.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
 
 
@@ -48,6 +49,7 @@ import { AlertasComponent } from './alertas/alertas.component';
     CategoriaDeleteComponent,
     UsuarioEditComponent,
     AlertasComponent,
+    QuemSomosComponent,
 
   ],
   imports: [
