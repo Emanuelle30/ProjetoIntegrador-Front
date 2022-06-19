@@ -13,6 +13,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 
 const routes: Routes = [
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'usuario-edit/:id', component: UsuarioEditComponent },
   {path: 'cadcategoria', component: CadcategoriaComponent},
   { path: 'usuario-edit/:id', component: UsuarioEditComponent },
+  {path: 'quem-somos', component: QuemSomosComponent}
 
 ];
 
