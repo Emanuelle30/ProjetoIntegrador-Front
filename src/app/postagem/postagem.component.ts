@@ -68,7 +68,7 @@ export class PostagemComponent implements OnInit {
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
-      this.alertas.showAlertSuccess('Produto adicionado com sucesso!')
+      this.alertas.showAlertSuccess('Produto publicado com sucesso!')
       this.produto = new Produto()
     })
    
