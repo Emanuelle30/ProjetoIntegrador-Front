@@ -1,32 +1,56 @@
-<div class="container mb-5 mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center text-secondary"> Excluir produtos</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h4 class="text-center text-secondary"> Você tem certeza que deseja excluir esse produto? </h4>
-        </div>
-    </div>
-    <div class="row d-flex justify-content-center mt-4">
-        <div class="col-md-4">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title m-0">{{produto.nome}}</h5>
-                    <small class="text-muted"> Categoria: "{{produto.categoria.descricao}}"</small>
-                    <p class="card-text mt-3">{{produto.descricao}}</p>
-                    <p class="card-text">
-                        <small class="text-muted">{{produto.preco | currency: "BRL"}}
-                    </small></p>
+<div class="container-fluid py-5 bg-primavera-suave">
+    <div class="row d-flex align-items-center">
+
+        <div class="col-md-10">
+            <div class="d-flex align-items-start">
+                <img class="sol ml-5" src="../../assets/img/sol-xilu.png" alt="imagem de sol" />
+                <div class="d-flex align-items-center" *ngIf='auth.logado()'>
+                    <h4 class="ml-5 mt-5">Área do(a) vendedor(a): {{auth.nome}}</h4>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-12 d-flex justify-content-center">
-            <button class="btn btn-danger mr-4" routerLink="/inicio"> Não </button>
-            <button class="btn btn-success" (click)="apagar()"> Sim </button>
+
+
+        <div class="container-fluid ">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5">
+
+                    <div class="card borda">
+                        <div class="card-body">
+                           
+                                <h1 class="text-center text-secondary"> Excluir produtos</h1>
+                            
+
+                            <div class="row col-md-10 d-flex justify-content-around">
+                                <div class="row-col-md-6">
+                                    <img class="ml-4 " src="{{produto.foto}}" alt="" height="180px" width="150px ">
+                                </div>
+                                <div class="row col-md-6 d-flex flex-column ml-4 mt-4">
+                                    <small class="card-text h5 mb-1">{{produto.nome}}</small>
+                                    <small class="card-text h6 mb-1"> Categoria:"{{produto.categoria.descricao}}"</small>
+                                    <small class="card-text h6 mb-1">{{produto.descricao}}</small>
+                                    <small class="card-text h6 mb-1">{{produto.preco | currency: "BRL"}}</small>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="row d-flex justify-content-center">
+                                <h4 class="text-center text-secondary mt-3 mb-2"> Você tem certeza de que deseja excluir esse
+                                    produto? </h4>
+                                <button class="btn btn-danger btn-lg btn-style mr-4" routerLink="/vendedor"> Não </button>
+                                <button class="btn btn-success btn-lg btn-style" (click)="apagar()"> Sim </button>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
+
+
     </div>
 </div>

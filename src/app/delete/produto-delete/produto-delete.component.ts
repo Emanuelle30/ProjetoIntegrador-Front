@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from 'src/app/model/Produto';
 import { AlertasService } from 'src/app/service/alertas.service';
+import { AuthService } from 'src/app/service/auth.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -20,6 +21,7 @@ export class ProdutoDeleteComponent implements OnInit {
       private route: ActivatedRoute,
       private produtoService: ProdutoService,
       private alertas: AlertasService,
+      public auth: AuthService
     ) { }
   
     ngOnInit() {
@@ -43,7 +45,7 @@ export class ProdutoDeleteComponent implements OnInit {
     apagar() {
       this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
         this.alertas.showAlertSuccess('Produto excluído com sucesso!')
-        this.router.navigate(['/inicio'])
+        this.router.navigate(['/vendedor'])
       })
   
     }

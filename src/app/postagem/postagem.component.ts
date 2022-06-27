@@ -6,6 +6,7 @@ import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -31,7 +32,8 @@ export class PostagemComponent implements OnInit {
     private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    public auth: AuthService
   ){ }
 
   ngOnInit(){
@@ -70,6 +72,7 @@ export class PostagemComponent implements OnInit {
       this.produto = resp
       this.alertas.showAlertSuccess('Produto publicado com sucesso!')
       this.produto = new Produto()
+      this.router.navigate(['/vendedor'])
     })
    
   }

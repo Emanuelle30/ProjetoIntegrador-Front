@@ -48,5 +48,4 @@ export class ProdutoService {
     return this.http.delete(`https://compravisse.herokuapp.com/produtos/${id}`, this.token)
   }
 
-
 }

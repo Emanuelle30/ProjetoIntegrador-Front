@@ -1,0 +1,61 @@
+<div class="container-fluid py-5 bg-primavera-suave">
+    <div class="row d-flex align-items-center">
+        <div class="col-md-10">
+            <div class="d-flex align-items-start">
+                <img class="sol ml-5" src="../../assets/img/sol-xilu.png" alt="imagem de sol" />
+                <div class="d-flex align-items-center" *ngIf='auth.logado()'>
+                    <h4 class=" ml-5 mt-5">Área do vendedor(a): {{auth.nome}}</h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container p-auto">
+            <div class=" row d-flex align-items-center justify-content-around mt-2">
+                <h1> Minhas mercadorias</h1>
+                <button routerLink="/postagem" type="submit"
+                    class="btn bg-outono font-weight-bold text-white btn-lg btn-style">Cadastrar
+                    item</button>
+            </div>
+
+            <div class="container mt-3">
+                <div class="row d-flex justify-content-around p-0 m-0 p-sm-0 m-sm-0">
+
+                    <div class="produto-card my-3" style="width: 16rem"
+                        *ngFor='let item of usuario.produto   | orderBy : key : reverse'>
+
+                        <div class="card">
+                            <a [routerLink]="['/produto', item.id]">
+                                <img style="width: 50px" [src]="item.foto" alt="Card image cap" class="imagem-card" />
+                            </a>
+                            <div class="card-body p-0">
+                                <p class="card-text text-center fw-bold text-nowrap elipse m-1 fs-6">
+                                    {{item.nome}}
+                                </p>
+                                <div class="d-flex">
+                                    <div class="d-flex flex-column justify-content-between m-2">
+                                        <small class="m-1 fw-bold text-line-decoration">{{ item.preco | currency: "BRL"
+                                            }}</small>
+                                        <h5 class="mx-1 mb-0 text-blue">
+                                            {{ item.preco - item.preco * 0.15 | currency: "BRL" }}
+                                        </h5>
+                                        <small class="mx-1 mt-2 pb-2 text-small text-blue">Vendido por
+                                            {{item.usuario.nome}}</small>
+
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mb-3">
+                                    <a [routerLink]="['/produto-edit', item.id]"
+                                        class="text-info font-weight-bold mr-3">Editar</a>
+                                    <a [routerLink]="['/produto-delete', item.id]"
+                                        class="text-danger font-weight-bold">Apagar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

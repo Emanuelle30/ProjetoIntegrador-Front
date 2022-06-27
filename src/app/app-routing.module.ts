@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+import { VendedorComponent } from './vendedor/vendedor.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,8 @@ const routes: Routes = [
   {path: 'produto/:id', component: ProdutoComponent},
   {path: 'postagem', component: PostagemComponent},
   {path: 'carrinho', component: CarrinhoComponent},
+  {path: 'vendedor', component: VendedorComponent},
+  {path: 'vendedor/:id', component: VendedorComponent},
 
   {path: 'produto-edit/:id', component: ProdutoEditComponent},
   {path: 'produto-delete/:id', component: ProdutoDeleteComponent},
@@ -32,8 +35,9 @@ const routes: Routes = [
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
   {path: 'usuario-edit/:id', component: UsuarioEditComponent },
   {path: 'cadcategoria', component: CadcategoriaComponent},
-  { path: 'usuario-edit/:id', component: UsuarioEditComponent },
+  {path: 'usuario-edit/:id', component: UsuarioEditComponent },
   {path: 'quem-somos', component: QuemSomosComponent}
+  
 
 ];
 
