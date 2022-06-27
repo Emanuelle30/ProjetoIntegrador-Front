@@ -25,6 +25,7 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+import { VendedorComponent } from './vendedor/vendedor.component';
 
 
 
@@ -50,6 +51,7 @@ import { QuemSomosComponent } from './quem-somos/quem-somos.component';
     UsuarioEditComponent,
     AlertasComponent,
     QuemSomosComponent,
+    VendedorComponent,
 
   ],
   imports: [

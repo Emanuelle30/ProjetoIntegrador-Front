@@ -1,0 +1,55 @@
+.container {
+    align-items: center;
+}
+
+.produto-card {
+    width: 300px;
+    min-height: 250px;
+}
+
+.imagem-card {
+    min-width: 100%;
+    height: 274px;
+    object-fit: cover;
+
+}
+
+.bg-inverno {
+    background-color: #89b0bf;
+}
+
+.bg-outono {
+    background-color: #40311e;
+}
+
+.bg-verao {
+    background-color: #c77c00;
+}
+
+.bg-primavera {
+    background-color: #e4bda3;
+}
+
+.bg-primavera-suave {
+    background-color: #fdd6bb;
+}
+
+.btn-style {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    transition: 500ms ease-in-out;
+
+}
+
+.fa {
+    padding-right: 2rem;
+}
+
+.borda {
+    border-radius: 1rem
+}
+
+.sol {
+    width: 150px;
+}

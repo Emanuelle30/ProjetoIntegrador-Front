@@ -1,37 +1,37 @@
-.bg-inverno{
+.bg-inverno {
     background-color: #89b0bf;
 }
 
-.bg-outono{
+.bg-outono {
     background-color: #40311e;
 }
 
-.bg-verao{
+.bg-verao {
     background-color: #c77c00;
 }
 
-.bg-primavera{
+.bg-primavera {
     background-color: #e4bda3;
 }
 
-.bg-facebook{
+.bg-facebook {
     background-color: #3b5998;
 }
 
-.bg-google{
+.bg-google {
     background-color: #4285F4;
 }
 
-.btn-style{
+.btn-style {
     outline: none;
     border-radius: 50px;
     transition: 500ms ease-in-out;
 }
 
-.fa{
+.fa {
     padding-right: 2rem;
 }
 
 .borda {
-  border-radius: 1rem
+    border-radius: 1rem
 }

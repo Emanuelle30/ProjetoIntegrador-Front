@@ -1,0 +1,43 @@
+.container {
+    align-items: center;
+}
+
+.bg-inverno {
+    background-color: #89b0bf;
+}
+
+.bg-outono {
+    background-color: #40311e;
+}
+
+.bg-verao {
+    background-color: #c77c00;
+}
+
+.bg-primavera {
+    background-color: #e4bda3;
+}
+
+.bg-primavera-suave {
+    background-color: #fdd6bb;
+}
+
+.btn-style {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    transition: 500ms ease-in-out;
+
+}
+
+.fa {
+    padding-right: 2rem;
+}
+
+.borda {
+    border-radius: 2rem
+}
+
+.sol {
+    width: 150px;
+}
