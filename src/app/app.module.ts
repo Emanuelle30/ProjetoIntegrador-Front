@@ -60,7 +60,8 @@ import { VendedorComponent } from './vendedor/vendedor.component';
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    OrderModule
+    OrderModule,
+    
   ],
   providers: [{
     provide: LocationStrategy,

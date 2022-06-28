@@ -67,41 +67,15 @@
 
               <!-- Button trigger modal -->
               <button type="button" class="btn bg-inverno fw w-50 text-white" data-toggle="modal"
-                data-target="#exampleModal">
+                data-target="#exampleModal" (click)="calcularFrete()">
                 Calcular frete
               </button>
-
-              <!-- Modal frete -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h3 class="modal-title" id="exampleModalLabel">
-                        &nbsp; OXENTE! O frete é grátis! 🥳
-                      </h3>
-                    </div>
-                    <div class="modal-body">
-                      <h5 class="text-muted">
-                        Aproveite! Promoção de inauguração válida até
-                        13/07/2022.
-                      </h5>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-success" data-dismiss="modal">
-                        Fechar
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-            <!-- / calcular frete e prazo -->
+
           </div>
         </div>
       </div>
     </form>
-
     <!-- fim forms -->
   </div>
 
@@ -133,7 +107,7 @@
               <div class="row justify-content-center">
                 <!-- botão -->
                 <button type="button" class="btn bg-inverno fw text-white mb-2" data-toggle="modal"
-                  data-target="#exampleModalCenter" (click)="finalizaCompra()">
+                  data-target="#exampleModalCenter" (click)="finalizarCompra()">
                   Finalizar compra
                 </button>
               </div>
@@ -141,34 +115,6 @@
           </div>
           <!-- ! / FIM modal de finalizar compra -->
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLongTitle">
-          Compra realizada com sucesso!
-        </h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h5 class="text-muted">
-          Aguarde... Em instantes você receberá todas as informações da sua compra
-          no e-mail cadastrado!
-        </h5>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal" routerLink="/inicio">
-          Ok
-        </button>
       </div>
     </div>
   </div>
