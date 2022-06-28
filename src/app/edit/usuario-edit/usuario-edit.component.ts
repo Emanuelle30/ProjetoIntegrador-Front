@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment.prod';
 export class UsuarioEditComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
-  idUsuario: number
+  // idUsuario: number
   confirmarSenha: string
   tipoUser: string
 
@@ -29,11 +29,20 @@ export class UsuarioEditComponent implements OnInit {
     window.scroll(0, 0)
 
     if (environment.token == '') {
+      this.alertas.showAlertInfo('Para fazer alteração no perfil é preciso estar logado.')
       this.router.navigate(['/login'])
     }
 
-    this.idUsuario = this.route.snapshot.params['id']
-    this.findByIdUsuario(this.idUsuario)
+    let id = this.route.snapshot.params['id'];
+    this.buscarUsuario(id);
+  }
+
+  buscarUsuario(id: number) {
+    this.authService.getByIdUsuario(id).subscribe((resp: Usuario) => {
+      this.usuario = resp;
+      this.usuario.senha = ''
+      
+    });
   }
 
   confirmSenha(event: any) {
@@ -42,6 +51,12 @@ export class UsuarioEditComponent implements OnInit {
 
   tipoUsuario(event: any) {
     this.confirmarSenha = event.target.value
+  }
+
+  findByIdUsuario(id: number) {
+    this.authService.getByIdUsuario(id).subscribe((resp: Usuario) => {
+      this.usuario = resp
+    })
   }
 
   atualizar() {
@@ -63,9 +78,9 @@ export class UsuarioEditComponent implements OnInit {
       })
     }
   }
-  findByIdUsuario(id: number) {
-    this.authService.getByIdUsuario(id).subscribe((resp: Usuario) => {
-      this.usuario = resp
-    })
-  }
+
 }
+
+
+
+
