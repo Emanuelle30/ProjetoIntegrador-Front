@@ -39,7 +39,7 @@
                             <div class="row d-flex justify-content-center">
                                 <h4 class="text-center text-secondary mt-3 mb-2"> Você tem certeza de que deseja excluir esse
                                     produto? </h4>
-                                <button class="btn btn-danger btn-lg btn-style mr-4" routerLink="/vendedor/:id"> Não </button>
+                                <button class="btn btn-danger btn-lg btn-style mr-4" [routerLink]="['/vendedor', auth.id]"> Não </button>
                                 <button class="btn btn-success btn-lg btn-style" (click)="apagar()"> Sim </button>
                             </div>
 
