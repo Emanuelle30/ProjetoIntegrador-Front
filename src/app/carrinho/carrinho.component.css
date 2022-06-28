@@ -1,20 +1,20 @@
-.bg-inverno{
+.bg-inverno {
     background-color: #89b0bf;
 }
 
-.inverno{
-    color:  #89b0bf;
+.inverno {
+    color: #89b0bf;
 }
 
-.bg-outono{
+.bg-outono {
     background-color: #40311e;
 }
 
-.bg-verao{
+.bg-verao {
     background-color: #c77c00;
 }
 
-.bg-primavera{
+.bg-primavera {
     background-color: #e4bda3;
 }
 
@@ -33,13 +33,28 @@
 
 .borda {
     border-radius: 1rem;
-    border:#c77c00;
+    border: #c77c00;
 }
 
 .f {
     float: right;
 }
 
-.img{
+.img-grow {
     width: 130px;
+}
+
+.er {
+    border: 1px solid #c77c00;
+    background-color: #c77c00(150, 215, 255);
+    transition: 1s;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+.img-grow:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }

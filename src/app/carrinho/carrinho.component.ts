@@ -36,25 +36,13 @@ export class CarrinhoComponent implements OnInit {
   }
 
   sumValue: number = 1;
-  onClick() {
-    this.sumValue = this.sumValue + 1;
-  }
 
-  offClick() {
-    if (this.sumValue == 1) {
-      this.sumValue = 1
-    }
 
-    else {
-      this.sumValue = this.sumValue - 1;
-    }
-  }
-
-  calcularFrete(){
+  calcularFrete() {
     Swal.fire({
-      title: 'OXENTE! O frete é grátis! 🤑', 
+      title: 'OXENTE! O frete é grátis! 🤑',
       text: "Aproveite! Promoção de inauguração! 🥳",
-      })
+    })
   }
 
   total() {
@@ -67,16 +55,16 @@ export class CarrinhoComponent implements OnInit {
   }
 
   finalizarCompra() {
-    if(environment.token == '') {
+    if (environment.token == '') {
       Swal.fire({
         title: 'Faça login para finalizar sua compra!',
-        icon: 'warning'        
+        icon: 'warning'
       }
       )
       this.router.navigate(['/login'])
       // alert('Você precisa estar logado!')
-      
-    } else if(this.listaCompras.length > 0) {
+
+    } else if (this.listaCompras.length > 0) {
       Swal.fire(
         'Compra realizada com sucesso!',
         'Aguarde... Em instantes você receberá todas as informações da sua compra no e-mail cadastrado!',
@@ -84,7 +72,7 @@ export class CarrinhoComponent implements OnInit {
         //,
         //confirmButtonText: 'Cool',
         //confirmButtonColor: ''
-    )
+      )
       // alert('Muito obrigado pela compra!')
       this.listaCompras = []
       environment.carrinho = [0]
@@ -92,7 +80,7 @@ export class CarrinhoComponent implements OnInit {
     } else {
       Swal.fire({
         title: 'Seu carrinho está vazio!',
-        icon: 'warning'        
+        icon: 'warning'
       }
       )
       //alert('Seu carrinho está vazio!')
