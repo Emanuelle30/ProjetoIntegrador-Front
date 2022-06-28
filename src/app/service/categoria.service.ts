@@ -38,7 +38,7 @@ postCategoria(categoria: Categoria): Observable<Categoria>{
   return this.http.post<Categoria>('https://compravisse.herokuapp.com/categorias', categoria,this.token)
 }
 
-putTema(categoria: Categoria): Observable<Categoria>{
+putCategoria(categoria: Categoria): Observable<Categoria>{
   return this.http.put<Categoria>('https://compravisse.herokuapp.com/categorias', categoria, this.token)
 }
 

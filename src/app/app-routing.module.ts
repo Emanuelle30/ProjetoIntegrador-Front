@@ -19,25 +19,24 @@ import { VendedorComponent } from './vendedor/vendedor.component';
 const routes: Routes = [
 
   {path:'', redirectTo: 'inicio', pathMatch: 'full'},
+
   {path: 'inicio', component: InicioComponent},
   {path: 'login', component: LoginComponent},
   {path: 'cadastro', component: CadastroComponent},
-  {path: 'categoria/:id', component: CategoriaComponent},
-  {path: 'produto/:id', component: ProdutoComponent},
   {path: 'postagem', component: PostagemComponent},
   {path: 'carrinho', component: CarrinhoComponent},
-  {path: 'vendedor/:id', component: VendedorComponent},
+  {path: 'cadcategoria', component: CadcategoriaComponent},
+  {path: 'quem-somos', component: QuemSomosComponent},
 
+  {path: 'vendedor/:id', component: VendedorComponent},
   {path: 'produto-edit/:id', component: ProdutoEditComponent},
   {path: 'produto-delete/:id', component: ProdutoDeleteComponent},
+  {path: 'categoria/:id', component: CategoriaComponent},
+  {path: 'produto/:id', component: ProdutoComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
   {path: 'usuario-edit/:id', component: UsuarioEditComponent },
-  {path: 'cadcategoria', component: CadcategoriaComponent},
-  {path: 'usuario-edit/:id', component: UsuarioEditComponent },
-  {path: 'quem-somos', component: QuemSomosComponent}
   
-
 ];
 
 @NgModule({
