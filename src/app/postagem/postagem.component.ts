@@ -72,7 +72,7 @@ export class PostagemComponent implements OnInit {
       this.produto = resp
       this.alertas.showAlertSuccess('Produto publicado com sucesso!')
       this.produto = new Produto()
-      this.router.navigate(['/vendedor/:id'])
+      this.router.navigate(['/vendedor', this.auth.id])
     })
    
   }
