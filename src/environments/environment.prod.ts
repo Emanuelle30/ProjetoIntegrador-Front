@@ -6,5 +6,6 @@ export const environment = {
   usuario:'',
   senha:'',
   tipo: '',
-  token: ''
+  token: '',
+  carrinho: [0]
 };

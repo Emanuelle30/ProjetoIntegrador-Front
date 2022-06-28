@@ -31,7 +31,7 @@
                   Olá, {{auth.nome}}
                 </a>                
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" *ngIf="auth.tipoUser()" [routerLink]="['/vendedor']" href="#">
+                  <a class="dropdown-item" *ngIf="auth.tipoUser()" [routerLink]="['/vendedor', auth.id]" href="#">
                     <i class="fa fa-shopping-bag mr-1" aria-hidden="true"></i>
                     Área do Vendedor
                   </a>
