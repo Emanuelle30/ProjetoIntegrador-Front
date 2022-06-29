@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment.prod';
 export class UsuarioEditComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
-  // idUsuario: number
+
   confirmarSenha: string
   tipoUser: string
 
@@ -21,7 +21,7 @@ export class UsuarioEditComponent implements OnInit {
     private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
-    private alertas: AlertasService
+    private alertas: AlertasService,
   ) { }
 
   ngOnInit() {
@@ -32,6 +32,8 @@ export class UsuarioEditComponent implements OnInit {
       this.alertas.showAlertInfo('Para fazer alteração no perfil é preciso estar logado.')
       this.router.navigate(['/login'])
     }
+
+    this.authService.refreshToken()
 
     let id = this.route.snapshot.params['id'];
     this.buscarUsuario(id);

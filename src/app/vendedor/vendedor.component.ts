@@ -38,7 +38,7 @@ export class VendedorComponent implements OnInit {
     window.scroll(0, 0)
 
     if (environment.token == '') {
-      alert('Para acessar esta área você precisa estar logado!')
+      this.alertas.showAlertInfo('Para acessar esta área você precisa estar logado!')
       this.router.navigate(['/entrar'])
     }
     this.auth.refreshToken()
